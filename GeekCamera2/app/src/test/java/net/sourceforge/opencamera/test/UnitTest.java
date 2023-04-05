@@ -1,18 +1,18 @@
-package com.deepinout.geekcamera.test;
+package com.peter.geekcamera.test;
 
 import android.media.CamcorderProfile;
 
-import com.deepinout.geekcamera.MainActivity;
-import com.deepinout.geekcamera.MyApplicationInterface;
-import com.deepinout.geekcamera.cameracontroller.CameraController;
-import com.deepinout.geekcamera.cameracontroller.CameraController2;
-import com.deepinout.geekcamera.HDRProcessor;
-import com.deepinout.geekcamera.ImageSaver;
-import com.deepinout.geekcamera.LocationSupplier;
-import com.deepinout.geekcamera.preview.Preview;
-import com.deepinout.geekcamera.preview.VideoQualityHandler;
-import com.deepinout.geekcamera.TextFormatter;
-import com.deepinout.geekcamera.ui.DrawPreview;
+import com.peter.geekcamera.MainActivity;
+import com.peter.geekcamera.MyApplicationInterface;
+import com.peter.geekcamera.cameracontroller.CameraController;
+import com.peter.geekcamera.cameracontroller.CameraController2;
+import com.peter.geekcamera.HDRProcessor;
+import com.peter.geekcamera.ImageSaver;
+import com.peter.geekcamera.LocationSupplier;
+import com.peter.geekcamera.preview.Preview;
+import com.peter.geekcamera.preview.VideoQualityHandler;
+import com.peter.geekcamera.TextFormatter;
+import com.peter.geekcamera.ui.DrawPreview;
 
 import org.junit.Test;
 

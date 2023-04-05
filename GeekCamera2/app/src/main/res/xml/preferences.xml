@@ -168,7 +168,7 @@
                 android:defaultValue="none"
                 />
 
-            <com.deepinout.geekcamera.ui.ArraySeekBarPreference
+            <com.peter.geekcamera.ui.ArraySeekBarPreference
                 android:key="preference_audio_noise_control_sensitivity"
                 android:title="@string/preference_audio_noise_control_sensitivity"
                 android:summary="@string/preference_audio_noise_control_sensitivity_summary"
@@ -208,8 +208,8 @@
                     >
 
                     <intent
-                        android:targetPackage="com.deepinout.geekcamera"
-                        android:targetClass="com.deepinout.geekcamera.remotecontrol.DeviceScanner"
+                        android:targetPackage="com.peter.geekcamera"
+                        android:targetClass="com.peter.geekcamera.remotecontrol.DeviceScanner"
                         />
 
                 </PreferenceScreen>
@@ -344,7 +344,7 @@
                 android:defaultValue="preference_ghost_image_off"
                 />
 
-            <com.deepinout.geekcamera.ui.ArraySeekBarPreference
+            <com.peter.geekcamera.ui.ArraySeekBarPreference
                 android:key="ghost_image_alpha"
                 android:title="@string/preference_ghost_image_alpha"
                 android:summary="@string/preference_ghost_image_alpha_summary"
@@ -742,7 +742,7 @@
                 android:icon="@drawable/ic_photo_size_select_large_white_48dp"
                 />
 
-            <com.deepinout.geekcamera.ui.ArraySeekBarPreference
+            <com.peter.geekcamera.ui.ArraySeekBarPreference
                 android:key="preference_quality"
                 android:title="@string/preference_quality"
                 android:summary="@string/preference_quality_summary"
@@ -963,7 +963,7 @@
                     android:defaultValue=""
                     />
 
-                <com.deepinout.geekcamera.ui.ArraySeekBarPreference
+                <com.peter.geekcamera.ui.ArraySeekBarPreference
                     android:key="preference_stamp_fontsize"
                     android:title="@string/preference_stamp_fontsize"
                     android:summary="@string/preference_stamp_fontsize_summary"
@@ -1076,7 +1076,7 @@
                 />
 
             <!--  if we move this to another PreferenceGroup, we should update code for the findPreference() call -->
-            <com.deepinout.geekcamera.ui.ArraySeekBarPreference
+            <com.peter.geekcamera.ui.ArraySeekBarPreference
                 android:key="preference_video_profile_gamma"
                 android:title="@string/preference_video_profile_gamma"
                 android:summary="@string/preference_video_profile_gamma_summary"

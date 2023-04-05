@@ -7,8 +7,8 @@
         >
         <intent
             android:action="com.deepinout.geekcamera.SHORTCUT_SETTINGS"
-            android:targetPackage="com.deepinout.geekcamera"
-            android:targetClass="com.deepinout.geekcamera.MainActivity"
+            android:targetPackage="com.peter.geekcamera"
+            android:targetClass="com.peter.geekcamera.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -19,8 +19,8 @@
         >
         <intent
             android:action="com.deepinout.geekcamera.SHORTCUT_GALLERY"
-            android:targetPackage="com.deepinout.geekcamera"
-            android:targetClass="com.deepinout.geekcamera.MainActivity"
+            android:targetPackage="com.peter.geekcamera"
+            android:targetClass="com.peter.geekcamera.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -31,8 +31,8 @@
         >
         <intent
             android:action="com.deepinout.geekcamera.SHORTCUT_VIDEO"
-            android:targetPackage="com.deepinout.geekcamera"
-            android:targetClass="com.deepinout.geekcamera.MainActivity"
+            android:targetPackage="com.peter.geekcamera"
+            android:targetClass="com.peter.geekcamera.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -43,8 +43,8 @@
         >
         <intent
             android:action="com.deepinout.geekcamera.SHORTCUT_SELFIE"
-            android:targetPackage="com.deepinout.geekcamera"
-            android:targetClass="com.deepinout.geekcamera.MainActivity"
+            android:targetPackage="com.peter.geekcamera"
+            android:targetClass="com.peter.geekcamera.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -55,8 +55,8 @@
         >
         <intent
             android:action="com.deepinout.geekcamera.SHORTCUT_CAMERA"
-            android:targetPackage="com.deepinout.geekcamera"
-            android:targetClass="com.deepinout.geekcamera.MainActivity"
+            android:targetPackage="com.peter.geekcamera"
+            android:targetClass="com.peter.geekcamera.MainActivity"
         />
     </shortcut>
 </shortcuts>
