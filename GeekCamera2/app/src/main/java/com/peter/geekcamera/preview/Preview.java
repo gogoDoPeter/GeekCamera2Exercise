@@ -1131,9 +1131,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
 
     private class CloseCameraTask extends AsyncTask<Void, Void, Void> {
         private static final String TAG = "CloseCameraTask";
-
         boolean reopen; // if set to true, reopen the camera once closed
-
         final CameraController camera_controller_local;
         final CloseCameraCallback closeCameraCallback;
 
@@ -1149,7 +1147,8 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 Log.d(TAG, "doInBackground, async task: " + this);
                 debug_time = System.currentTimeMillis();
             }
-            camera_controller_local.stopPreview();
+            //不用走 captureSession.stopRepeating(); 来关闭Repeating，加快cameraDevice的关闭
+//            camera_controller_local.stopPreview();
             if( MyDebug.LOG ) {
                 Log.d(TAG, "time to stop preview: " + (System.currentTimeMillis() - debug_time));
             }
@@ -1191,8 +1190,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
     private void closeCamera(boolean async, final CloseCameraCallback closeCameraCallback) {
         long debug_time = 0;
         if( MyDebug.LOG ) {
-            Log.d(TAG, "closeCamera()");
-            Log.d(TAG, "async: " + async);
+            Log.d(TAG, "closeCamera: async: " + async, new Throwable());
             debug_time = System.currentTimeMillis();
         }
         removePendingContinuousFocusReset();
@@ -1237,27 +1235,25 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 // to use it
                 final CameraController camera_controller_local = mCameraController;
                 mCameraController = null;
-                if( async ) {
-                    if( MyDebug.LOG )
+                if (async) { //如果是异步处理closeCamera
+                    if (MyDebug.LOG)
                         Log.d(TAG, "close camera on background async");
                     mCameraOpenState = CameraOpenState.CAMERAOPENSTATE_CLOSING;
                     mCloseCameraTask = new CloseCameraTask(camera_controller_local, closeCameraCallback);
                     mCloseCameraTask.execute();
-                }
-                else {
-                    if( MyDebug.LOG ) {
+                } else {
+                    if (MyDebug.LOG) {
                         Log.d(TAG, "closeCamera: about to release camera controller: " + (System.currentTimeMillis() - debug_time));
                     }
-                    camera_controller_local.stopPreview();
-                    if( MyDebug.LOG ) {
+//                    camera_controller_local.stopPreview();
+                    if (MyDebug.LOG) {
                         Log.d(TAG, "time to stop preview: " + (System.currentTimeMillis() - debug_time));
                     }
                     camera_controller_local.release();
                     mCameraOpenState = CameraOpenState.CAMERAOPENSTATE_CLOSED;
                 }
             }
-        }
-        else {
+        } else {
             if( MyDebug.LOG ) {
                 Log.d(TAG, "mCameraController isn't open");
             }
@@ -1464,7 +1460,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             return;
         }
 
-        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) {
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) { //openCamera时申请动态权限
             // we restrict the checks to Android 6 or later just in case, see note in LocationSupplier.setupLocationListener()
             if( MyDebug.LOG )
                 Log.d(TAG, "check for permissions");
